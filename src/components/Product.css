@@ -1,0 +1,17 @@
+.product {
+    margin: 50px;
+    margin-top: 0px;
+    width: 500px;
+    height: fit-content;
+    background: gray;
+    text-align: center;
+}
+
+.product button {
+    margin: 0px;
+}
+
+.picture {
+    width: 325px;
+    height: 250px;
+}
