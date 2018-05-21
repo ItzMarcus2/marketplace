@@ -57,12 +57,25 @@ class App extends Component {
       })
   }
 
+  openCart = () => {
+    document.getElementById('cart').style.width = "450px";
+  }
+  closeCart = () => {
+    document.getElementById('cart').style.width = "0";
+  }
+
   render() {
     const {products} = this.state;
     return (
       <div className="App">
-        <Header logo={logo} />
-        <Welcome />
+        <div id="cart" className="cart">
+          <button onClick={this.closeCart}>&times;</button>
+          <h1>YOUR CART</h1>
+          
+          
+        </div>
+        <Header openCart={this.openCart} logo={logo} />
+        <Welcome/>
         <div className="body">
           {
             products.map((product, index) => {
