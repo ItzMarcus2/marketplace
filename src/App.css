@@ -23,3 +23,28 @@
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
+
+.cart-product {
+  overflow: hidden;
+  border: 1px solid white;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+}
+
+.cart-product-headline {
+  float: left;
+  display: inline;
+}
+
+.cart-product-price {
+  margin-top: 33px;
+  float: right;
+  height: 100%;
+  display: inline;
+}
+
+#cart-items {
+  transition: 2s;
+}

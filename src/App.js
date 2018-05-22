@@ -64,6 +64,31 @@ class App extends Component {
     document.getElementById('cart').style.width = "0";
   }
 
+  loadCart = (empty) => {
+    // the cart is empty
+    const {cart} = this.state;
+    if (empty === true) {
+      return (
+        <div>Your cart is empty.</div>
+      );
+    } else {
+      return (
+        <div id="cart-items">
+          {
+            cart.map(product => {
+              return (
+                <div className="cart-product" key={product.product_key}>
+                  <h1 className="cart-product-headline">{product.name}</h1>
+                  <p className="cart-product-price">${product.price}</p>
+                </div>
+              );
+            })
+          }
+        </div>
+      );
+    }
+  }
+
   render() {
     const {products} = this.state;
     return (
@@ -71,7 +96,8 @@ class App extends Component {
         <div id="cart" className="cart">
           <button onClick={this.closeCart}>&times;</button>
           <h1>YOUR CART</h1>
-          
+
+          {this.state.cart.length === 0 ? this.loadCart(true) : this.loadCart(false)}
           
         </div>
         <Header openCart={this.openCart} logo={logo} />
